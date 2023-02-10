@@ -6,27 +6,28 @@ const apiKey = process.env.API_KEY;
 window.addEventListener('load', () => {
     let lon;
     let lat;
-    // accesses location of user:
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-        try {
-            lon = position.coords.longitude;
-            lat = position.coords.latitude;
-            const locationData = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+    // asks permission to access users location:
+    navigator.permissions.request({ name: 'geolocation' })
+        .then((permission) => {
+            if (permission.state === 'granted'){
+                navigator.geolocation.getCurrentPosition((position) => {
+                    try {
+                        let lon = position.coords.longitude;
+                        let lat = position.coords.latitude;
+                        const locationData = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}`;
 
-            fetch(locationData).then((response) => {
-                return response.json();
-            })
-                .catch((error) => {
-                    console.error(error);
+
+                        fetch(locationData).then((response) => {
+                            return response.json();
+                        })
+                            .catch((error) => {
+                                console.error(error);
+                            });
+                    } catch (error) {
+                        console.error(error);
+                    }
                 });
-        }  catch (error) {
-            console.error(error);
-        }
+            }
+        });
     });
-};
-});
 
-
-
-console.log(locationData)

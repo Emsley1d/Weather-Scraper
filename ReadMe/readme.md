@@ -27,5 +27,9 @@ I want to keep the design clean and simple as below:
     }
     ```
 
+    * Created new API key.
+    * Added "navigator.permissions.request" but still no luck.
+
+
 
 
