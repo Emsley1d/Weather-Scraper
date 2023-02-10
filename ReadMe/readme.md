@@ -12,6 +12,8 @@ I want to keep the design clean and simple as below:
 
 ## Current Issues:
 
+## Resolved Issues:
+
 1. Browser (Chrome) not asking for location. 
     * Re-opened live server in Safari but Safari doesnt ask for permission to access location either.
     * Confirmed Chrome & Safari had permission to access my location on my Mac.
@@ -29,6 +31,10 @@ I want to keep the design clean and simple as below:
 
     * Created new API key.
     * Added "navigator.permissions.request" but still no luck.
+    * Many browsers currently not supporting Permission API so reverted back to Geolocation API.
+    * 'require('dotenv').config()' and hiding the API Key in .env was the issue as I don't have a bundler. For the time being I'll continue without hiding the API key and look to add a bundler at a later stage.
+
+
 
 
 

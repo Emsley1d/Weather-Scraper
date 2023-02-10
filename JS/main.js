@@ -1,33 +1,26 @@
-require('dotenv').config();
+// require('dotenv').config();
 
-const apiKey = process.env.API_KEY;
+const apiKey = '1be2e458069261f93204584096091f3b'
 
 // onload event listener for api:
-window.addEventListener('load', () => {
-    let lon;
-    let lat;
-    // asks permission to access users location:
-    navigator.permissions.request({ name: 'geolocation' })
-        .then((permission) => {
-            if (permission.state === 'granted'){
-                navigator.geolocation.getCurrentPosition((position) => {
-                    try {
-                        let lon = position.coords.longitude;
-                        let lat = position.coords.latitude;
-                        const locationData = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}`;
 
+if (typeof window !== "undefined") {
+    window.addEventListener('load', () => {
+        let lon;
+        let lat;
+        // accesses location of user:
 
-                        fetch(locationData).then((response) => {
-                            return response.json();
-                        })
-                            .catch((error) => {
-                                console.error(error);
-                            });
-                    } catch (error) {
-                        console.error(error);
-                    }
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const lon = position.coords.longitude;
+                const lat = position.coords.latitude;
+                const locationData = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}`;
+                fetch(locationData).then((response) => {
+                    return response.json();
+                }).then(data => {
+                    console.log(data);
                 });
-            }
-        });
+            });
+        }
     });
-
+}
