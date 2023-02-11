@@ -1,6 +1,6 @@
 // require('dotenv').config();
 
-const apiKey = '1be2e458069261f93204584096091f3b'
+const API_key = '1be2e458069261f93204584096091f3b'
 
 // onload event listener for api:
 
@@ -9,12 +9,12 @@ if (typeof window !== "undefined") {
         let lon;
         let lat;
         // accesses location of user:
-
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 const lon = position.coords.longitude;
                 const lat = position.coords.latitude;
                 const locationData = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}`;
+                console.log(locationData);
                 fetch(locationData).then((response) => {
                     return response.json();
                 }).then(data => {

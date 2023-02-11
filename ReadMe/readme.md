@@ -12,9 +12,13 @@ I want to keep the design clean and simple as below:
 
 ## Current Issues:
 
+2. Console message of "[Violation] Only request geolocation information in response to a user gesture" and no location data logged in console.
+    * It would appear being able to request a users geolocation on page load has been removed: https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/
+
+
 ## Resolved Issues:
 
-1. Browser (Chrome) not asking for location. 
+1. Browser (Chrome) not asking permission to access user location. 
     * Re-opened live server in Safari but Safari doesnt ask for permission to access location either.
     * Confirmed Chrome & Safari had permission to access my location on my Mac.
     * Realised I hadn't correctly used string interpolation for the locationData URL; so corrected URL.
