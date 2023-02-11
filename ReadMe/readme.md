@@ -38,6 +38,10 @@ I want to keep the design clean and simple as below:
     * It would appear being able to request a users geolocation on page load has been removed: https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/
     * Button added which user has to press to then be prompted to allow access to location.
 
+3. Temperatures were being returned in Kelvin and I wanted them returned in °C.
+    * Simply needed to add "&units=metric" to the API url.
+
+
 
 
 
