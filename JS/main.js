@@ -14,8 +14,26 @@ button.onclick = function(){
                 console.log(locationData);
                 fetch(locationData).then((response) => {
                     return response.json();
-                }).then(data => {
-                    console.log(data);
+                }).then((data) => {
+                    const place = data.name;
+                    const displayElement = document.querySelector("#place");
+                    displayElement.innerHTML = place;
+
+                    const { description } = data.weather[0];
+                    weather.textContent = `${description}`;
+
+                    const { temp } = data.main;
+                    tempC.textContent = `${temp.toFixed(2)} °C`;
+
+                    const { feels_like } = data.main;
+                    feelsLike.textContent = `Feels like: ${feels_like.toFixed(2)} °C`;
+
+                    const { sunrise } = data.sys;
+                    sunrise.textContent = `Sunrise: ${sunrise}`;
+
+                    const { sunset } = data.sys;
+                    sunset.textContent = `Sunset: ${sunset}`;
+
                 });
             });
         }
