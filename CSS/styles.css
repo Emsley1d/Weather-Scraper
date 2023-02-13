@@ -12,5 +12,16 @@
     justify-content: center;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    background: rgb(255, 255, 255);
+    /* background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.633) 0%,
+      rgba(129, 129, 129, 0.841) 35%,
+      rgb(0, 0, 0) 100%
+    ); */
 }
 
+#location {
+    width: 10%;
+}

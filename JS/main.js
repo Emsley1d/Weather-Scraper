@@ -2,10 +2,14 @@
 
 const API_key = '1be2e458069261f93204584096091f3b'
 
-let button = document.querySelector("#location");
+let img = document.querySelector("#location");
+let confirm = document.querySelector("#confirm");
 
-button.onclick = function () {
-    button.remove();
+
+img.onclick = function () {
+    img.remove();
+    confirm.remove();
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
             lon = position.coords.longitude;
