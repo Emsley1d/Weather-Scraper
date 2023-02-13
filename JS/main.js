@@ -3,16 +3,15 @@
 const API_key = '1be2e458069261f93204584096091f3b'
 
 let img = document.querySelector("#location");
+
 let confirm = document.querySelector("#confirm");
 let spinner = document.querySelector("#spinner");
 spinner.style.display = "none";
-
 
 img.onclick = function () {
     img.remove();
     confirm.remove();
     spinner.style.display = "block";
-
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -55,6 +54,7 @@ img.onclick = function () {
                 const sunsetDisplay = document.querySelector("#sunset");
                 sunsetDisplay.textContent = `Sunset: ${sunsetGMT.toLocaleTimeString()}`;
 
+                // Removes sunrise/sunset if it has already occured.
                 let currentTime = new Date()
                 if (currentTime.getTime() > sunriseGMT.getTime()) {
                     sunriseDisplay.remove();

@@ -1,16 +1,29 @@
- # Weather App (mini-project)
+ # Weather Scraper (mini-project)
 
 ## Description:
 
-A location based weather app to show current the current weather data depending on a user's location.
+A location based weather app to show the below for a user's location:
+    * Current weather conditions.
+    * Wind speed.
+    * Temperature.
+    * Sunrise/Sunset (unless already occured).
+
+## Aim:
+
+    * To put my JavaScript skills to use.
+    * To practice calling and fetching data from an API.
+    * To practice manipulating the DOM.
+    * To make something useful and enjoy doing it!
 
 ## Wireframe:
 
 I want to keep the design clean and simple as below:
 
-![wireframe](/ReadMe/Wireframe.png)
+![wireframe](/Wireframe.png)
 
 ## Current Issues:
+
+N/A - all resolved.
 
 ## Resolved Issues:
 
@@ -32,14 +45,15 @@ I want to keep the design clean and simple as below:
     * Created new API key.
     * Added "navigator.permissions.request" but still no luck.
     * Many browsers currently not supporting Permission API so reverted back to Geolocation API.
+
+    Solution:
     * 'require('dotenv').config()' and hiding the API Key in .env was the issue as I don't have a bundler. For the time being I'll continue without hiding the API key and look to add a bundler at a later stage.
 
 2. Console message of "[Violation] Only request geolocation information in response to a user gesture" and no location data logged in console.
     * It would appear being able to request a users geolocation on page load has been removed: https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/
-    * Button added which user has to press to then be prompted to allow access to location.
 
-3. Temperatures were being returned in Kelvin and I wanted them returned in °C.
-    * Simply needed to add "&units=metric" to the API url.
+    Solution:
+    * Button added which user has to press to then be prompted to allow access to location.
 
 
 
