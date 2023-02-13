@@ -4,11 +4,15 @@ const API_key = '1be2e458069261f93204584096091f3b'
 
 let img = document.querySelector("#location");
 let confirm = document.querySelector("#confirm");
+let spinner = document.querySelector("#spinner");
+spinner.style.display = "none";
 
 
 img.onclick = function () {
     img.remove();
     confirm.remove();
+    spinner.style.display = "block";
+
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -19,6 +23,7 @@ img.onclick = function () {
             fetch(locationData).then((response) => {
                 return response.json();
             }).then((data) => {
+                spinner.style.display = "none";
 
                 const { icon } = data.weather[0]
                 const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
@@ -35,7 +40,7 @@ img.onclick = function () {
                 wind.textContent = `wind speed: ${speed.toFixed(0)} mph`;
 
                 const { temp } = data.main;
-                tempC.textContent = `${temp.toFixed(1)} °C`;
+                tempC.textContent = `Temperature: ${temp.toFixed(1)} °C`;
 
                 const { feels_like } = data.main;
                 feelsLike.textContent = `Feels like: ${feels_like.toFixed(1)} °C`;
