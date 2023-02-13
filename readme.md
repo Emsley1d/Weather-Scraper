@@ -3,12 +3,17 @@
 ## Description:
 
 A location based weather app to show the below for a user's location:
+
     * Current weather conditions.
     * Wind speed.
     * Temperature.
     * Sunrise/Sunset (unless already occured).
+    
+ ## Deployment Link:
+    
+[Weather Scraper](https://emsley1d.github.io/Weather-app/)
 
-## Aim:
+## Project Aims:
 
     * To put my JavaScript skills to use.
     * To practice calling and fetching data from an API.
