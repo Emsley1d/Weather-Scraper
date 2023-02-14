@@ -5,7 +5,12 @@
 }
 
 body {
-    background: rgb(237, 237, 237);
+    background: radial-gradient(
+        circle,
+        rgba(176, 190, 255, 0.633) 0%,
+        rgba(95, 175, 255, 0.841) 40%,
+        rgb(30, 44, 118) 100%
+      );
 }
 
 .container {
@@ -17,6 +22,7 @@ body {
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     text-transform: capitalize;
+    color: rgb(55, 55, 55);
 }
 
 #location {
