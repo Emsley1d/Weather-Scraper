@@ -22,7 +22,7 @@ A location based weather app to show the below for a user's location:
 
 ## Wireframe:
 
-I want to keep the design clean and simple as below:
+HTML and CSS weren't my priority for this project so I wanted to keep the design clean and simple as per my Wireframe below:
 
 ![wireframe](/Wireframe.png)
 
