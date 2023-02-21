@@ -57,9 +57,9 @@ img.onclick = function () {
                 // Removes sunrise/sunset if it has already occured.
                 let currentTime = new Date()
                 if (currentTime.getTime() > sunriseGMT.getTime()) {
-                    sunriseDisplay.remove();
+                    sunriseDisplay.style.textDecoration = "line-through";
                 } else if (currentTime.getTime() > sunsetGMT.getTime()) {
-                    sunsetDisplay.remove();
+                    sunsetDisplay.style.textDecoration = "line-through";
                 };
             });
         });
