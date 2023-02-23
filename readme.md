@@ -75,7 +75,7 @@ N/A - all resolved.
 
 ---
 
-**3. The Sunset time isn't removed from the browser after it occurs; as intended. However; the Sunrise time is removed after it occurs.**
+**3. The Sunset time isn't removed from the browser after it occurs. However, the Sunrise time is removed after it occurs.**
 
   * Reviwed my code and realised I hadn't included .getTime() for the Sunset part of my if else statement. 
   * The above still didn't work so I settled on using a "line-through" for the Sunrise/Sunset instead of attempting to remove both after each had occured.
