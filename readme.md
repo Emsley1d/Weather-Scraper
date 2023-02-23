@@ -41,7 +41,7 @@ N/A - all resolved.
 
 ## Resolved Issues:
 
-1. Browser (Chrome) not asking permission to access user location.
+**1. Browser (Chrome) not asking permission to access user location.**
 
     * Re-opened live server in Safari but Safari doesnt ask for permission to access location either.
     * Confirmed Chrome & Safari had permission to access my location on my Mac.
@@ -64,12 +64,23 @@ N/A - all resolved.
     **Solution:**
   * 'require('dotenv').config()' and hiding the API Key in .env was the issue as I don't have a bundler. For the time being I'll continue without hiding the API key and look to add a bundler at a later stage.
 
-2. Console message of "[Violation] Only request geolocation information in response to a user gesture" and no location data logged in console.
+**2. Console message of "[Violation] Only request geolocation information in response to a user gesture" and no location data logged in console.**
 
     * It would appear being able to request a users geolocation on page load has been removed: https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/
 
     **Solution:**
     * Button added which user has to press to then be prompted to allow access to location.
+
+**3. The Sunset time isn't removed from the browser after it occurs; as intended. However; the Sunrise time is removed after it occurs.**
+    * Reviwed my code and realised I hadn't included .getTime() for the Sunset part of my if else statement. 
+    * The above still didn't work so I settled on using a "line-through" for the Sunrise/Sunset instead of attempting to remove both after each had occured.
+
+   **Solution:**
+    * I came to realise I hadn't closed the "<h5>" tag for for the header with id="sunset" correctly; I had neglected to include the closing "/". Realising this I then reverted back to my original plan to use .remove() to remove both Sunset/Sunrise as opposted to adding the style of "line-through".
+
+
+    
+
 
 
 
