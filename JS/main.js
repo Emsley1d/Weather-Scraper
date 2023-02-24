@@ -58,7 +58,8 @@ img.onclick = function () {
                 let currentTime = new Date()
                 if (currentTime.getTime() > sunriseGMT.getTime()) {
                     sunriseDisplay.remove();
-                } else if (currentTime.getTime() > sunsetGMT.getTime()) {
+                } 
+                if (currentTime.getTime() > sunsetGMT.getTime()) {
                     sunsetDisplay.remove();
                 };
             });

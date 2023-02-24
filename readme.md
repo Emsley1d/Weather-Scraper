@@ -77,11 +77,11 @@ N/A - all resolved.
 
 **3. The Sunset time isn't removed from the browser after it occurs. However, the Sunrise time is removed after it occurs.**
 
-  * Reviwed my code and realised I hadn't included .getTime() for the Sunset part of my if else statement. 
+  * Reviewed my code and realised I hadn't included .getTime() for the Sunset part of my if else statement. 
   * The above still didn't work so I settled on using a "line-through" for the Sunrise/Sunset instead of attempting to remove both after each had occured.
-
-   **Solution:**
   *  I came to realise I hadn't closed the "h5" tag for the header with id="sunset" correctly; I had neglected to include the closing "/". Realising this I then reverted back to my original plan to use .remove() to remove both Sunset/Sunrise as opposed to adding the style of "line-through".
+  * I realised that with the if else codition I had written only the sunriseDisplay would ever be removed; I updated the statement to hopefully resolve the issue.
+
 
 
     
