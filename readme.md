@@ -13,7 +13,7 @@ A location based Weather Scraper to show the below for a user's location:
     
  ## Deployment Link:
     
-[Weather Scraper](https://emsley1d.github.io/Weather-Scraper/)
+You can find the app [here](https://emsley1d.github.io/Weather-Scraper/).
 
 ## Technologies Used:
 
